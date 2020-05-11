@@ -224,11 +224,6 @@ label {
 
 .form-html {
   margin-bottom: 1rem;
-}
-
-pre,
-code {
-  max-width: 100%;
   overflow: auto;
 }
 
