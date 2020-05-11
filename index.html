@@ -15,7 +15,7 @@
       <header>
         <h1 class="title">Accessibility Web Explainer</h1>
         <h2 class="subtitle">Easy best practices for a more accessible web</h2>
-        <p class="intro">
+        <p class="paragraph-bold">
           As of April of 2020, almost 4.57 billion people were active internet
           users worldwide. It is estimated that 1 billion people have some form
           of disability, many of which are also internet users. Based on these
@@ -29,8 +29,8 @@
             <li><a href="#section-1">Semantic tags</a></li>
             <li><a href="#section-2">Alt text</a></li>
             <li><a href="#section-3">:focus</a></li>
-            <li><a href="#section-4">Color contrast</a></li>
-            <li><a href="#section-5">Form labels</a></li>
+            <li><a href="#section-4">Color contrast ratio</a></li>
+            <li><a href="#section-5">Form and aria labels</a></li>
           </ul>
         </nav>
       </header>
@@ -62,6 +62,34 @@
           <code>header</code>, <code>nav</code>, <code>main</code> and
           <code>footer</code>.
         </p>
+
+        <h3>Example</h3>
+        <div class="example-container">
+          <div>
+            <p class="example">Non-semantic HTML structure</p>
+            <pre><code>&lt;div&gt;
+    &lt;h1&gt; &lt;/h1&gt;
+    &lt;div &lt;/div&gt; 
+&lt;/div&gt;
+&lt;div&gt;
+    &lt;div&gt; &lt;/div&gt; 
+    &lt;div&gt; &lt;/div&gt; 
+&lt;/div&gt;
+&lt;div&gt; &lt;/div&gt;</code></pre>
+          </div>
+          <div>
+            <p class="example">Semantic HTML structure</p>
+            <pre><code>&lt;header&gt;
+    &lt;h1&gt; &lt;/h1&gt;
+    &lt;nav &lt;/nav&gt; 
+&lt;/header&gt;
+&lt;main&gt;
+    &lt;section&gt; &lt;/section&gt; 
+    &lt;section&gt; &lt;/section&gt; 
+&lt;/main&gt;
+&lt;footer&gt; &lt;/footer&gt;</code></pre>
+          </div>
+        </div>
       </section>
       <section id="section-2">
         <h2>Alt text</h2>
@@ -75,8 +103,8 @@
 
         <p>
           In addition to being an absolutely necessity for accessibility, alt
-          text will also help regular users of your site. If an image fails to
-          load, its alt text will be displayed instead.
+          text acts as a fallback. If an image fails to load, alt text will
+          guarantee that some text will be displayed instead.
         </p>
 
         <h3>Example</h3>
@@ -84,40 +112,117 @@
         <p class="example">Image loaded successfully &darr;</p>
         <img
           src="https://placekitten.com/800/400"
-          alt="Kitten."
+          alt="Kitten in the snow."
           class="kitten"
         />
 
         <p class="example">Image failed to load &darr;</p>
-        <img src="" alt="Kitten." />
+        <img src="" alt="Kitten in the snow." />
       </section>
       <section id="section-3">
         <h2>:focus</h2>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis,
-          officiis iusto sunt dicta delectus cum adipisci dolorem repudiandae
-          vel sint obcaecati quidem omnis rerum officia commodi deleniti saepe
-          repellat hic.
+          Some HTML elements have a hover state to indicate to the users that
+          the element is interactive. This is very commonly seen in elements
+          such as <code>anchors</code>, which are used for links. Adding hover
+          states to your site is generally considered a good practice, but
+          there's a problem: it only works if you're using a mouse. Many users,
+          including those with dexterity issues and other disabilities,
+          exclusively navigate the web using their keyboard.
         </p>
+        <p>
+          To solve the accessibility problem of hover states, we have the
+          <code>:focus</code> pseudo-class. This CSS pseudo-class represents an
+          element (such as a form input or an anchor) that has received focus.
+          Including it along with the <code>:hover</code> pseudo-class will make
+          sure to cover users who navigate with a mouse, as well as users that
+          navigate with a keyboard.
+        </p>
+
+        <h3>Example</h3>
+
+        <p>
+          Try using the "tab" key to select the text below and observe if their
+          hover effects are triggered.
+        </p>
+
+        <p class="example">Without :focus</p>
+        <p><a href="#" class="no-focus">https://www.google.com/</a></p>
+
+        <p class="example">With :focus</p>
+        <p><a href="#" class="focus">https://www.google.com/</a></p>
       </section>
       <section id="section-4">
-        <h2>Semantic tags</h2>
+        <h2>Color contrast ratio</h2>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis,
-          officiis iusto sunt dicta delectus cum adipisci dolorem repudiandae
-          vel sint obcaecati quidem omnis rerum officia commodi deleniti saepe
-          repellat hic.
+          It goes without saying that it is important that the text on our sites
+          is easy to read. To achieve this, we need to make sure that the color
+          contrast ratio (the relationship between text color and background
+          color) is enough. But, what is "enough"? The Web Content Accessibility
+          Guidelines (WCAG) requires text to have a minimum acceptable color
+          contrast ratio of 3:1.
         </p>
+
+        <p>
+          Adhering to proper color contrast ratios will help everyone, but
+          especially users with visibility problems.
+        </p>
+
+        <h3>Example</h3>
+
+        <p>
+          Keep in mind that a ratio of 1:1 is white text on a white background
+          (not visible), and 21:1 is black text on a white background (extremely
+          visible).
+        </p>
+
+        <h4 class="example">Poor color contrast ratio (1.7:1) &darr;</h4>
+        <p class="poor-contrast">Lorem ipsum dolor sit amet.</p>
+
+        <h4 class="example">Good color contrast ratio (8.3:1) &darr;</h4>
+        <p>Lorem ipsum dolor sit amet.</p>
       </section>
       <section id="section-5">
-        <h2>Semantic tags</h2>
+        <h2>Form and aria labels</h2>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis,
-          officiis iusto sunt dicta delectus cum adipisci dolorem repudiandae
-          vel sint obcaecati quidem omnis rerum officia commodi deleniti saepe
-          repellat hic.
+          Forms on the internet are ubiquitous. Almost every website that
+          requires users to enter information will have a form of some sort.
+          Forms can have
+          <code>placeholder</code> text, as such:
+        </p>
+        <input type="text" placeholder="This is placeholder text..." />
+        <p>
+          However, screen readers cannot access placeholder text, so it's
+          important to ensure that all forms have a label associated with it. To
+          achieve this, match the label's <code>for</code> attribute to the
+          form's <code>id</code>.
+        </p>
+
+        <h3>Example</h3>
+
+        <label for="email">Email</label>
+        <input
+          id="email"
+          type="email"
+          placeholder="Please enter your email..."
+        />
+
+        <p>The HTML for the form above looks like this:</p>
+
+        <pre class="form-html"><code>&lt;label for="email">Email&lt;/label&gt;
+&lt;input id="email" type="email"
+placeholder="Please enter your email..."/&gt;</code></pre>
+
+        <p>
+          If for some reason your site can't have visible labels, make sure to
+          add a <code>aria-label</code> attribute to the form. This will make
+          sure that your form is still accessible to screen readers.
         </p>
       </section>
+      <p class="paragraph-bold">
+        With some simple tweaks to our sites, we can help millions of people
+        have a better online experience.
+      </p>
     </main>
     <footer>
       By Julian Vazquez

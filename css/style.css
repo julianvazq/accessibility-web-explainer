@@ -46,12 +46,19 @@ code {
   color: hsl(39, 100%, 30%);
 }
 
+.paragraph-bold {
+  margin-bottom: 2rem;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
 /* Header */
 
 header {
-  margin: 2rem 0 3rem 0;
+  padding: 2rem 0;
   mix-blend-mode: darken;
   position: relative;
+  border-bottom: 1px solid var(--orange);
 }
 
 header:before {
@@ -94,12 +101,6 @@ header:before {
   background-color: var(--orange);
 }
 
-.intro {
-  margin-bottom: 2rem;
-  font-weight: 600;
-  font-size: 1.5rem;
-}
-
 nav h2 {
   font-size: 1.75rem;
   text-transform: uppercase;
@@ -131,7 +132,12 @@ section h2 {
 }
 
 section h3 {
+  font-size: 1.5rem;
   margin-bottom: 1rem;
+}
+
+section h4 {
+  font-size: 1.25rem;
 }
 
 section p {
@@ -143,8 +149,26 @@ section p:last-child {
   margin-bottom: 0;
 }
 
+.example-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.example-container > div {
+  margin-bottom: 2rem;
+}
+
+@media screen and (min-width: 700px) {
+  .example-container {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+
 .example {
   color: var(--orange);
+  font-weight: 600;
 }
 
 section img {
@@ -154,6 +178,51 @@ section img {
 }
 
 .kitten {
+  margin-bottom: 1rem;
+}
+
+.focus,
+.no-focus {
+  font-weight: 600;
+  color: inherit;
+}
+
+.no-focus:hover {
+  border-bottom: 3px solid #ed0000;
+  color: #ed0000;
+}
+
+.no-focus:focus {
+  border-bottom: none;
+  color: inherit;
+}
+
+.focus:hover,
+.focus:focus {
+  border-bottom: 3px solid #ed0000;
+  color: #ed0000;
+}
+
+.poor-contrast {
+  color: hsl(191, 40%, 70%);
+}
+
+input {
+  font-size: 1.25rem;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border-radius: 0.25rem;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.form-html {
   margin-bottom: 1rem;
 }
 
