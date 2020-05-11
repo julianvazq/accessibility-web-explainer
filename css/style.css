@@ -229,6 +229,7 @@ label {
 pre,
 code {
   max-width: 100%;
+  overflow: auto;
 }
 
 /* Footer */
