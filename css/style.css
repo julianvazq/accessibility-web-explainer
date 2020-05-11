@@ -70,10 +70,13 @@ header:before {
 
 .title {
   font-size: 3rem;
+  line-height: 1.125;
+  margin-bottom: 0.5rem;
 }
 
 .subtitle {
   font-size: 1.75rem;
+  line-height: 1.125;
   font-weight: 600;
   color: var(--orange);
   margin-bottom: 2rem;
@@ -159,5 +162,5 @@ section img {
 footer {
   text-align: center;
   font-weight: 600;
-  margin: 4rem 0;
+  margin: 4rem 0 2rem 0;
 }
